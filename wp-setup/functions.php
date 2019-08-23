@@ -35,7 +35,7 @@ if ( ! function_exists( 'nexpresstheme_setup' ) ) {
 } // myfirsttheme_setup
 add_action( 'after_setup_theme', 'nexpresstheme_setup' );
 
-add_action( 'after_switch_theme', 'install_pages' );
+// add_action( 'after_switch_theme', 'install_pages' );
 
 
 /**
