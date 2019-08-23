@@ -1,19 +1,16 @@
 const withSass = require("@zeit/next-sass");
 const withCSS = require("@zeit/next-css");
-const withPurgeCss = require("next-purgecss");
+const dotEnvResult = require("dotenv-flow").config();
+
+if (dotEnvResult.error) {
+  throw dotEnvResult.error;
+}
 
 module.exports = withCSS(
-  withSass(
-    withPurgeCss({
-      purgeCssEnabled: ({ dev, isServer }) => !dev && !isServer,
-      serverRuntimeConfig: {
-        // Will only be available on the server side
-        // mySecret: "secret"
-      },
-      publicRuntimeConfig: {
-        // Will be available on both server and client
-        graphqlEndpoint: "http://localhost:8888/wordpress/graphql"
-      }
-    })
-  )
+  withSass({
+    publicRuntimeConfig: {
+      // Will be available on both server and client
+      graphqlEndpoint: process.env.ENDPOINT
+    }
+  })
 );

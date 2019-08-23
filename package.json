@@ -1,5 +1,5 @@
 {
-  "name": "blog",
+  "name": "nexpress",
   "version": "1.0.0",
   "description": "modern react blog for wordpress",
   "main": "index.js",
@@ -7,21 +7,17 @@
     "dev": "next",
     "build": "next build",
     "start": "next start -p $PORT",
-    "analyze": "BUNDLE_ANALYZE=both next build",
-    "analyze:server": "BUNDLE_ANALYZE=server next build",
-    "analyze:browser": "BUNDLE_ANALYZE=browser next build",
-    "heroku-postbuild": "npm run build",
     "storybook": "start-storybook"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@zeit/next-bundle-analyzer": "^0.1.2",
     "@zeit/next-sass": "^1.0.1",
     "apollo-boost": "^0.4.3",
     "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
+    "dotenv-flow": "^3.1.0",
     "eslint-plugin-react-hooks": "^1.6.1",
     "graphql": "^14.4.2",
     "isomorphic-unfetch": "^3.0.0",
@@ -38,7 +34,6 @@
     "@storybook/react": "^5.1.9",
     "@zeit/next-css": "^1.0.1",
     "eslint": "^6.1.0",
-    "eslint-plugin-react": "^7.14.3",
-    "next-purgecss": "^3.1.1"
+    "eslint-plugin-react": "^7.14.3"
   }
 }
